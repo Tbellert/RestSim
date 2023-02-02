@@ -35,7 +35,7 @@ public class Restaurant {
 	public Restaurant() {
 		System.out.println("_______________________________");
 		System.out.println(" ");
-		System.out.println("   Welcome to the Restaurant Simulator  ");
+		System.out.println("   Welcome to Restaurant Simulator  ");
 		System.out.println("_______________________________");
 		System.out.println(" ");
 		mainMenu();
