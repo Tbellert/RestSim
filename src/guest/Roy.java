@@ -28,4 +28,10 @@ public class Roy extends Guest
 	}
 	
 	
+	public void EtenVanSpareRibs()
+	{
+		System.out.println("Roy is munching on some delicious, meaty, tasty spareribs.");
+		System.out.println("nom..nom..SPARERIBS...YEAHHHH..nom..nom");
+	}
+	
 }
