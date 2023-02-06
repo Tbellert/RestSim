@@ -14,7 +14,7 @@ public class Restaurant {
 	// generic
 	public boolean isOpen;
 	public String[] dayOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-	public static int numberOfSeats = 60;
+	public static int numberOfSeats = 20;
 	public ArrayList<Integer> availableTables = new ArrayList<Integer>();
 	public double surfaceAres;
 	public int staffCount;
@@ -88,6 +88,7 @@ public class Restaurant {
 							
 							// get reservations for that day by method of ReservationSystem
 							System.out.println("Getting reservations for today");
+							resSystem.getReservations();
 							
 							System.out.println("End of " + dayOfWeek[days]);
 							isOpen = false;
