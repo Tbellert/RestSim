@@ -1,10 +1,31 @@
 package guest;
 
 public abstract class Guest {
-	String name;
-	String lastname;
-	String age;
+	private String name;
+	private String lastName;
+	private int age;
 	
+	String[] firstNamesArray = {"Jan", "Gerrit", "Egbert", "Ruben", "Dominique", "Angela", "Shakira", "Britney"};
+	String[] lastNamesArray = {"de Weert", "van Konijnenburgh", "Janssen", "Bellert", "de Koning", "Westra", "van Hengel", "Notten"};
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLastname() {
+		return lastName;
+	}
+	public void setLastname(String lastname) {
+		this.lastName = lastname;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
 }
 
 //Vraag aan mijn mede developer:
