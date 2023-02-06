@@ -1,7 +1,10 @@
 package guest;
 
 public abstract class Guest {
-	GuestProfile guestProfile;
+	String name;
+	String lastname;
+	String age;
+	
 }
 
 //Vraag aan mijn mede developer:
