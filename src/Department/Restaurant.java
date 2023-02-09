@@ -80,6 +80,7 @@ public class Restaurant {
 						isOpen = false;
 					} else {
 						// start of regular day of service
+						System.out.println("---------------------");
 						System.out.println("Today is " + dayOfWeek[days]);
 						isOpen = true;
 						
@@ -88,8 +89,11 @@ public class Restaurant {
 							
 							// get reservations for that day by method of ReservationSystem
 							System.out.println("Getting reservations for today");
-							
+							resSystem.getReservations();
+							showReservations();
+				
 							System.out.println("End of " + dayOfWeek[days]);
+							resSystem.copyToWeekly();
 							isOpen = false;
 						}
 					}
@@ -97,6 +101,7 @@ public class Restaurant {
 				}
 			// weeks
 				System.out.println("End of week " + weeks);
+				resSystem.copyToMonthly();
 				boolean makeChoice = true;
 				if (weeks == 4) {
 					makeChoice = false;
@@ -122,6 +127,7 @@ public class Restaurant {
 			}
 		// months	
 			System.out.println("End of month " + months);
+			resSystem.copyToYearly();
 			boolean makeChoice = true;
 			if (months == 12) {
 				makeChoice = false;
@@ -149,5 +155,33 @@ public class Restaurant {
 	
 	public void backEnd() {
 		System.out.println("Under construction");
+	}
+	
+	public void showReservations() {
+		System.out.println("Would you like to view reservations?");
+		System.out.println("Y | Yes");
+		System.out.println("N | No");
+		String input = scanner.next();
+		
+		switch (input.toLowerCase()) {
+		case "y":
+			System.out.println("Number of reservations: " + resSystem.reservations.size());
+			System.out.println("Total Guests: " + resSystem.seatsFilledToday);
+			System.out.println(" ");
+			for (Reservation reservation : resSystem.reservations) {
+				System.out.println((resSystem.reservations.indexOf(reservation)+1) +" | Reservation: " + reservation.name + " pax: " + reservation.numberOfGuests);
+				for (Guest guest : reservation.guests) {
+					System.out.println(guest.getName()+ " " + guest.getLastname() + " " + guest.getAge());
+					guest.getName();
+				}
+				System.out.println("---------------------");
+			}
+			break;
+		case "n": 
+			break;
+		default:
+			System.out.println("Try again.");
+			showReservations();
+		}
 	}
 }
